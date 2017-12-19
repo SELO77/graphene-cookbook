@@ -23,4 +23,4 @@ class Query(object):
 		return Category.objects.all()
 
 	def resolve_all_ingredients(self, info, **kwargs):
-		return Ingredients.objects.all()
+		return Ingredients.objects.select_related('category').all()
