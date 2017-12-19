@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 SERVICE_APPS = [
-    'ingredients',
+    'cookbook.ingredients',
 ]
 
 INSTALLED_APPS = [

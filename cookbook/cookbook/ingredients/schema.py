@@ -1,5 +1,4 @@
 import graphene
-
 from graphene_django.types import DjangoObjectType
 
 from cookbook.ingredients.models import Category, Ingredient
@@ -23,4 +22,4 @@ class Query(object):
 		return Category.objects.all()
 
 	def resolve_all_ingredients(self, info, **kwargs):
-		return Ingredients.objects.select_related('category').all()
+		return Ingredient.objects.select_related('category').all()
