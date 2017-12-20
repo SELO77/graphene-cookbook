@@ -1,4 +1,4 @@
-from graphene import relay, AbstractType
+from graphene import relay, AbstractType, ObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 from graphene_django.types import DjangoObjectType
 
@@ -24,7 +24,7 @@ class IngredientNode(DjangoObjectType):
         interfaces = (relay.Node,)
 
 
-class Query(AbstractType):
+class Query(ObjectType):
     category = relay.Node.Field(CategoryNode)
     all_categories = DjangoFilterConnectionField(CategoryNode)
 
